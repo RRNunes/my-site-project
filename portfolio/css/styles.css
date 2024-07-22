@@ -15,6 +15,8 @@ nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li {
@@ -24,6 +26,10 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-align: none;
+}
+
+main {
+    padding: 20px;
 }
 
 .hero {
@@ -38,6 +44,48 @@ footer {
     color: #fff;
 }
 
+section {
+    margin: 20px;
+}
+
+section h1 {
+    text-align: center;
+}
+
+section ul {
+    list-style: none;
+    padding: 0;
+}
+
+section ul li {
+    margin-bottom: 20px;
+}
+form {
+    margin-bottom: 20px;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form input, form textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
@@ -46,5 +94,12 @@ footer {
     .hero {
         padding: 20px 0;
     }
-    
+    form {
+        width: 100px;
+        padding: 0 20px;
+    }
+}
+nav.scrolled {
+    background-color: #555;
+    transition: background-color 0.3s ease;
 }
