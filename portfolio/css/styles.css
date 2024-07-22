@@ -4,13 +4,11 @@ body {
     padding: 0;
     box-sizing: border-box;
 }
-
 header {
     background-color: #333;
     color: #fff;
     padding: 10px 0;
 }
-
 nav ul {
     list-style: none;
     display: flex;
@@ -18,72 +16,69 @@ nav ul {
     margin: 0;
     padding: 0;
 }
-
 nav ul li {
     margin: 0 15px;
 }
-
 nav ul li a {
     color: #fff;
     text-align: none;
 }
-
 main {
     padding: 20px;
 }
-
 .hero {
     text-align: center;
     padding: 50px 0;
 }
-
+button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #0056b3;
+}
 footer {
     text-align: center;
     padding: 20px 0;
     background-color: #333;
     color: #fff;
 }
-
-section {
-    margin: 20px;
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
-
-section h1 {
+.project-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
-
-section ul {
-    list-style: none;
-    padding: 0;
+.project-card h2 {
+    margin-top: 0;
 }
-
-section ul li {
-    margin-bottom: 20px;
+.project-card p {
+    margin: 10px 0;
 }
-form {
-    margin-bottom: 20px;
-    flex-direction: column;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-form input, form textarea {
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
+.project-card a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
     border-radius: 4px;
 }
-
-form button {
-    padding: 10px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-form button:hover {
-    background-color: #555;
+.project-card a:hover {
+    background-color: #0056b3;
 }
 
 @media (max-width: 768px) {
@@ -95,8 +90,16 @@ form button:hover {
         padding: 20px 0;
     }
     form {
-        width: 100px;
+        width: 100%;
         padding: 0 20px;
+    }
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .project-card {
+        width: 100%;
+        max-width: 90%;
     }
 }
 nav.scrolled {
