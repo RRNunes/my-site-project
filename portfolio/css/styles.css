@@ -1,13 +1,18 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    line-height: 1.6;
 }
 header {
     background-color: #333;
     color: #fff;
     padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 nav ul {
     list-style: none;
@@ -21,10 +26,15 @@ nav ul li {
 }
 nav ul li a {
     color: #fff;
-    text-align: none;
+    text-decoration: none;
+}
+nav ul li a:focus,
+nav ul li a:hover {
+    outline: 2px solid #fff;
+    background-color: #444;
 }
 main {
-    padding: 20px;
+    padding-top: 60px;
 }
 .hero {
     text-align: center;
@@ -41,11 +51,22 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+button:focus {
+    outline: 2px solid #0056b3;
+}
 footer {
     text-align: center;
     padding: 20px 0;
     background-color: #333;
     color: #fff;
+}
+section {
+    margin: 20px 0;
+    padding: 50px 0;
+}
+
+section h1 {
+    text-align: center;
 }
 .projects-container {
     display: flex;
@@ -80,6 +101,9 @@ footer {
 .project-card a:hover {
     background-color: #0056b3;
 }
+.project-card a:focus {
+    outline: 2px solid #0056b3;
+}
 
 @media (max-width: 768px) {
     nav ul {
@@ -88,10 +112,6 @@ footer {
     }
     .hero {
         padding: 20px 0;
-    }
-    form {
-        width: 100%;
-        padding: 0 20px;
     }
     .projects-container {
         flex-direction: column;
