@@ -37,15 +37,31 @@ main {
     padding-top: 60px;
 }
 .hero {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
     padding: 50px 0;
 }
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
 .hero .profile-photo {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
+    border-radius: 8px;
+    width: 300px;
+    height: 300px;
     object-fit: cover;
-    margin-top: 20px;
+}
+.hero-text {
+    max-width: 600px;
+}
+.horo-text h1 {
+    margin: 0 0 10px 0;
+}
+.hero-text p {
+    margin: 0;
 }
 footer {
     text-align: center;
