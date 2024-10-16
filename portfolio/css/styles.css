@@ -1,172 +1,226 @@
 :root {
     --primary-color: #333;
-    --secondary-color: #0056b3;
-    --background-color: #ddd;
+    --secondary-color: #fff;
+    --accent-color: #0056b3;
+    --background-color: #f9f9f9;
     --text-color: #333;
-    --accent-color: #444;
-    --hover-color: #0056b3;
-    --dark-background-color: #222;
-    --dark-text-color: #ddd;
-    --spacing-small: 10px;
-    --spacing-medium: 20px;
-    --spacing-large: 50px;
 }
+
+body.dark-mode {
+    --primary-color: #fff;
+    --secondary-color: #333;
+    --accent-color: #0056b3;
+    --background-color: #222;
+    --text-color: #f9f9f9;
+}
+
 body {
-    font-family: 'Montserrat';
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    line-height: 1.6;
     background-color: var(--background-color);
     color: var(--text-color);
-    transition: background-color 0.3s, color 0.3s;
+    line-height: 1.6;
+    box-sizing: border-box;
 }
-body.dark-mode {
-    background-color: var(--dark-background-color);
-    color: var(--dark-text-color);
-}
+
 header {
     background-color: var(--primary-color);
-    color: #fff;
-    padding: var(--spacing-small) 0;
+    color: var(--secondary-color);
+    padding: 15px 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
 }
+
+/* Transição suave em links e botões */
+a, button {
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+a:hover, button:hover {
+    transform: scale(1.05);
+    background-color: #0056b3;
+}
+
+a:focus, button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 86, 179, 0.7);
+}
+
+/* Animação ao rolar para seções */
+section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+button, .project-card a {
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+button:hover, .project-card a:hover {
+    background-color: #004080;
+    transform: scale(1.05);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    margin: 0;
     padding: 0;
+    margin: 0;
 }
+
 nav ul li {
-    margin: 0 var(--spacing-small);
+    margin: 0 20px;
 }
+
 nav ul li a {
-    color: #fff;
+    color: var(--secondary-color);
     text-decoration: none;
-    background: none;
-    border: none;
-    font: inherit;
-    cursor: pointer;
-    padding: 10px 15px;
-    transition: background-color 0.3s, color 0.3s;
+    font-weight: 500;
+    font-size: 18px;
 }
-nav ul li a:focus,
+
 nav ul li a:hover,
-nav ul li button:focus,
-nav ul li button:hover {
-    outline: 2px solid #fff;
-    background-color:var(--accent-color);
+nav ul li a:focus {
+    color: var(--accent-color);
+    outline: none;
 }
+
 main {
     padding-top: 80px;
 }
+
 .hero {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: left;
-    padding: var(--spacing-large) 0;
+    text-align: center;
+    padding: 80px 20px;
+    background-color: var(--background-color);
 }
-.hero-content {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-medium);
-}
+
 .hero .profile-photo {
     border-radius: 50%;
-    width: 250px;
-    height: 250px;
+    width: 180px;
+    height: 180px;
     object-fit: cover;
-    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
 .hero-text {
-    max-width: 600px;
+    margin-top: 20px;
 }
-.horo-text h1 {
-    margin: 0 0 10px 0;
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    margin: 10px 0;
+    color: var(--primary-color);
 }
+
 .hero-text p {
-    margin: 0;
+    font-size: 1.2rem;
+    color: var(--text-color);
 }
-footer {
-    text-align: center;
-    padding: var(--spacing-medium) 0;
-    background-color: var(--primary-color);
-    color: #fff;
-}
+
 section {
-    margin: var(--spacing-medium) 0;
-    padding: var(--spacing-large) 0;
+    padding: 60px 20px;
+    margin: 40px 0;
 }
 
 section h1 {
     text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
 }
+
 .projects-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: var(--spacing-medium);
+    gap: 20px;
 }
+
 .project-card {
-    background-color: #fff;
-    border: 1px solid #ccc;
+    background-color: var(--secondary-color);
+    border: 1px solid #ddd;
     border-radius: 8px;
-    padding: var(--spacing-medium);
-    width: 300px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 280px;
     text-align: center;
-    transition: background-color 0.3s, box-shadow 0.3s;
-    
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
+
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 .project-card:hover {
-    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
+
 .project-card h2 {
     margin-top: 0;
+    font-size: 1.5rem;
 }
+
 .project-card p {
+    font-size: 1rem;
     margin: 10px 0;
 }
+
 .project-card a {
     display: inline-block;
     margin-top: 10px;
     padding: 10px 15px;
-    background-color: var(--primary-color);
+    background-color: var(--accent-color);
     color: #fff;
     text-decoration: none;
     border-radius: 4px;
-    transition: background-color 0.3s, color 0.3s;
+    font-size: 1rem;
 }
+
 .project-card a:hover {
-    background-color: var(--hover-color);;
+    background-color: #003f7f;
 }
-.project-card a:focus {
-    outline: 2px solid var(--hover-color);
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+footer p {
+    margin: 0;
+}
+
+body.dark-mode {
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 @media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
     .hero {
-        padding: var(--spacing-medium) 0;
+        flex-direction: column;
     }
     .projects-container {
         flex-direction: column;
-        align-items: center;
     }
     .project-card {
-        width: 100%;
-        max-width: 90%;
+        width: 90%;
     }
-}
-nav.scrolled {
-    background-color: #555;
-    transition: background-color 0.3s ease;
 }
